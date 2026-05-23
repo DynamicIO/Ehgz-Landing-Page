@@ -1,0 +1,212 @@
+/* ==========================================================================
+   Ehgz — Base styles & reset
+   Mobile-first, semantic-first.
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px; /* space for sticky nav */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
+  color: var(--text-200);
+  background: var(--bg-base);
+  background-image:
+    radial-gradient(1200px 600px at 90% -10%, rgba(201,168,118,0.10) 0%, transparent 60%),
+    radial-gradient(900px 500px at -10% 30%, rgba(74,144,226,0.05) 0%, transparent 60%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Selection */
+::selection {
+  background: var(--gold-400);
+  color: var(--bg-base);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-100);
+}
+
+p {
+  margin: 0;
+  color: var(--text-300);
+  line-height: var(--lh-relaxed);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+a:hover { color: var(--gold-300); }
+
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold-300);
+  outline-offset: 3px;
+  border-radius: var(--radius-xs);
+}
+
+/* ==========================================================================
+   Layout primitives
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  padding-block: var(--section-y);
+  position: relative;
+}
+
+.section--tight { padding-block: clamp(3rem, 6vw, 5rem); }
+
+.section__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--gold-300);
+  margin-bottom: var(--space-4);
+}
+
+.section__eyebrow::before {
+  content: "";
+  width: 22px;
+  height: 1px;
+  background: var(--gold-400);
+}
+
+.section__title {
+  font-size: var(--fs-3xl);
+  margin-bottom: var(--space-4);
+  max-width: 22ch;
+}
+
+.section__title--center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.section__lede {
+  font-size: var(--fs-md);
+  color: var(--text-300);
+  max-width: 58ch;
+  line-height: var(--lh-relaxed);
+}
+
+.section__head {
+  margin-bottom: clamp(2rem, 5vw, 4rem);
+}
+
+.section__head--center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ==========================================================================
+   Utilities
+   ========================================================================== */
+
+.text-gradient {
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.muted    { color: var(--text-400); }
+.gold     { color: var(--gold-300); }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--gold-400);
+  color: var(--bg-base);
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  z-index: var(--z-toast);
+  transition: top var(--dur-base) var(--ease-out);
+}
+.skip-link:focus {
+  top: 1rem;
+}

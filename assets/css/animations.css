@@ -1,0 +1,194 @@
+/* ==========================================================================
+   Ehgz — Scroll-triggered animations
+   Driven by IntersectionObserver -> data-reveal attribute,
+   plus pure CSS scroll-driven animations where supported.
+   ========================================================================== */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity 900ms var(--ease-out),
+    transform 900ms var(--ease-out),
+    filter 900ms var(--ease-out);
+  will-change: opacity, transform;
+}
+
+[data-reveal="left"]  { transform: translateX(-48px); }
+[data-reveal="right"] { transform: translateX(48px); }
+[data-reveal="up"]    { transform: translateY(48px); }
+[data-reveal="zoom"]  { transform: scale(0.94); }
+[data-reveal="blur"]  { filter: blur(14px); transform: translateY(24px); }
+
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+[data-reveal-delay="1"].is-revealed { transition-delay: 80ms; }
+[data-reveal-delay="2"].is-revealed { transition-delay: 160ms; }
+[data-reveal-delay="3"].is-revealed { transition-delay: 240ms; }
+[data-reveal-delay="4"].is-revealed { transition-delay: 320ms; }
+[data-reveal-delay="5"].is-revealed { transition-delay: 400ms; }
+[data-reveal-delay="6"].is-revealed { transition-delay: 480ms; }
+
+/* Stagger — children of a parent get sequenced reveals */
+[data-stagger] > * {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 700ms var(--ease-out),
+    transform 700ms var(--ease-out);
+}
+[data-stagger].is-revealed > *:nth-child(1) { opacity: 1; transform: none; transition-delay: 0ms; }
+[data-stagger].is-revealed > *:nth-child(2) { opacity: 1; transform: none; transition-delay: 80ms; }
+[data-stagger].is-revealed > *:nth-child(3) { opacity: 1; transform: none; transition-delay: 160ms; }
+[data-stagger].is-revealed > *:nth-child(4) { opacity: 1; transform: none; transition-delay: 240ms; }
+[data-stagger].is-revealed > *:nth-child(5) { opacity: 1; transform: none; transition-delay: 320ms; }
+[data-stagger].is-revealed > *:nth-child(6) { opacity: 1; transform: none; transition-delay: 400ms; }
+[data-stagger].is-revealed > *:nth-child(7) { opacity: 1; transform: none; transition-delay: 480ms; }
+[data-stagger].is-revealed > *:nth-child(8) { opacity: 1; transform: none; transition-delay: 560ms; }
+[data-stagger].is-revealed > *:nth-child(9) { opacity: 1; transform: none; transition-delay: 640ms; }
+
+/* ==========================================================================
+   Hero — first paint entrance
+   ========================================================================== */
+
+.hero__pill,
+.hero__title,
+.hero__lede,
+.hero__cta-row,
+.hero__meta {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: hero-rise 1100ms var(--ease-out) forwards;
+}
+.hero__pill     { animation-delay: 100ms; }
+.hero__title    { animation-delay: 200ms; }
+.hero__lede     { animation-delay: 360ms; }
+.hero__cta-row  { animation-delay: 500ms; }
+.hero__meta     { animation-delay: 620ms; }
+
+@keyframes hero-rise {
+  to { opacity: 1; transform: none; }
+}
+
+.phone-stack__item {
+  opacity: 0;
+  animation: phone-rise 1300ms var(--ease-spring) forwards;
+}
+.phone-stack__item--front { animation-delay: 280ms; }
+.phone-stack__item--back  { animation-delay: 460ms; }
+.phone-stack__item--side  { animation-delay: 580ms; }
+
+@keyframes phone-rise {
+  from { opacity: 0; transform: translateY(60px) scale(0.9); }
+  to   { opacity: 1; }
+}
+.phone-stack__item--front { animation-name: phone-rise-front; }
+@keyframes phone-rise-front {
+  from { opacity: 0; transform: translateY(60px) scale(0.94); }
+  to   { opacity: 1; transform: none; }
+}
+.phone-stack__item--back {
+  animation-name: phone-rise-back;
+}
+@keyframes phone-rise-back {
+  from { opacity: 0; transform: translate(-22%, -6%) rotate(-9deg) scale(0.62); }
+  to   { opacity: 0.85; transform: translate(-22%, -6%) rotate(-9deg) scale(0.78); }
+}
+.phone-stack__item--side {
+  animation-name: phone-rise-side;
+}
+@keyframes phone-rise-side {
+  from { opacity: 0; transform: translate(20%, 4%) rotate(8deg) scale(0.66); }
+  to   { opacity: 0.92; transform: translate(20%, 4%) rotate(8deg) scale(0.82); }
+}
+
+/* Subtle hover float on the front phone */
+.phone-stack__item--front {
+  animation:
+    phone-rise-front 1300ms var(--ease-spring) forwards,
+    phone-float 6s ease-in-out infinite 1500ms;
+}
+@keyframes phone-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+
+/* ==========================================================================
+   Section progress bar (via scroll-driven animation, with fallback)
+   ========================================================================== */
+
+.scroll-progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 2px;
+  background: var(--gradient-gold);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  z-index: var(--z-overlay);
+  pointer-events: none;
+}
+
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    animation: progress linear;
+    animation-timeline: scroll(root);
+  }
+  @keyframes progress {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+}
+
+/* ==========================================================================
+   Parallax hint — used by JS to scale-down translateY on scroll
+   ========================================================================== */
+
+.parallax-slow   { --parallax-strength: 0.05; }
+.parallax-base   { --parallax-strength: 0.12; }
+.parallax-strong { --parallax-strength: 0.22; }
+
+/* ==========================================================================
+   Card tilt on pointer move (set via JS custom props)
+   ========================================================================== */
+
+.tilt {
+  transform: perspective(1000px)
+             rotateX(var(--tilt-x, 0deg))
+             rotateY(var(--tilt-y, 0deg));
+  transition: transform 280ms var(--ease-out);
+  will-change: transform;
+}
+
+/* ==========================================================================
+   Counter "rolling" effect (CSS only fallback fade-in)
+   ========================================================================== */
+
+.counter {
+  display: inline-block;
+}
+
+/* ==========================================================================
+   Reduced motion — turn off all of the above
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  [data-stagger] > *,
+  .hero__pill,
+  .hero__title,
+  .hero__lede,
+  .hero__cta-row,
+  .hero__meta,
+  .phone-stack__item {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+  .scroll-indicator__line { animation: none; }
+  .marquee__track { animation: none; }
+}

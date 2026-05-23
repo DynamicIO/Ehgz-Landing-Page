@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0E0B08" />
+  <meta name="color-scheme" content="dark" />
+
+  <!-- Primary meta -->
+  <title>Ehgz — Discover &amp; Book Egypt's Finest Venues, Zero Fees</title>
+  <meta name="description" content="Ehgz is a curated venue discovery and booking platform for Egypt. Instantly book the best restaurants, rooftops, lounges, bars and cafes in Cairo and beyond — zero fees, instant confirmation." />
+  <meta name="keywords" content="Ehgz, Egypt venues, restaurant booking Cairo, rooftop reservations, lounges Egypt, bars Cairo, cafes Egypt, dining app Egypt, iOS booking app" />
+  <meta name="author" content="Ehgz" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://ehgz.app/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ehgz" />
+  <meta property="og:title" content="Ehgz — Discover &amp; Book Egypt's Finest Venues" />
+  <meta property="og:description" content="Curated venues, instant booking, zero fees. The premium way to dine and unwind across Egypt." />
+  <meta property="og:url" content="https://ehgz.app/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="ar_EG" />
+  <meta property="og:image" content="https://ehgz.app/assets/images/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Ehgz iOS app screens showcasing curated Egyptian venues, search filters and a Cairo map view" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ehgz — Discover &amp; Book Egypt's Finest Venues" />
+  <meta name="twitter:description" content="Instantly book restaurants, rooftops and bars across Egypt. Zero fees, instant confirmation." />
+  <meta name="twitter:image" content="https://ehgz.app/assets/images/og-cover.jpg" />
+  <meta name="twitter:image:alt" content="Ehgz iOS app screens with the gold-on-dark interface" />
+
+  <!-- Apple / PWA hints -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Ehgz" />
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+
+  <!-- Performance: preconnect & preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="preload" as="image" href="assets/images/screen-discover.png" fetchpriority="high" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/tokens.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://ehgz.app/#org",
+        "name": "Ehgz",
+        "url": "https://ehgz.app/",
+        "logo": "https://ehgz.app/assets/icons/logo.png",
+        "sameAs": [
+          "https://instagram.com/ehgz.app",
+          "https://twitter.com/ehgzapp"
+        ]
+      },
+      {
+        "@type": "MobileApplication",
+        "name": "Ehgz",
+        "operatingSystem": "iOS",
+        "applicationCategory": "TravelApplication",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "ratingCount": "1240"
+        },
+        "description": "Discover and book restaurants, rooftops, lounges and bars across Egypt with zero fees and instant confirmation."
+      },
+      {
+        "@type": "WebSite",
+        "url": "https://ehgz.app/",
+        "name": "Ehgz",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://ehgz.app/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- =========================================
+       NAV
+       ========================================= -->
+  <header class="site-nav" role="banner">
+    <div class="container site-nav__inner">
+      <a class="brand" href="/" aria-label="Ehgz home">
+        <span class="brand__mark" aria-hidden="true">E</span>
+        <span>Ehgz</span>
+      </a>
+
+      <nav class="site-nav__links" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#cities">Cities</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <a class="btn btn--primary site-nav__cta" href="#download" aria-label="Download Ehgz on the App Store">
+        Download
+        <span class="btn__arrow" aria-hidden="true">→</span>
+      </a>
+
+      <button class="site-nav__toggle" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-label="Mobile menu">
+    <nav aria-label="Mobile primary">
+      <a href="#features">Features <span aria-hidden="true">→</span></a>
+      <a href="#how">How it works <span aria-hidden="true">→</span></a>
+      <a href="#cities">Cities <span aria-hidden="true">→</span></a>
+      <a href="#testimonials">Reviews <span aria-hidden="true">→</span></a>
+      <a href="#faq">FAQ <span aria-hidden="true">→</span></a>
+    </nav>
+    <a class="btn btn--primary btn--lg mobile-menu__cta" href="#download">
+      Download for iOS
+      <span class="btn__arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
+
+  <main id="main">
+
+    <!-- =========================================
+         HERO
+         ========================================= -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <span class="hero__pill">
+            <span class="hero__pill-dot" aria-hidden="true">✦</span>
+            Now live across Egypt
+          </span>
+
+          <h1 class="hero__title" id="hero-title">
+            Egypt's finest tables, <em class="text-gradient">one tap away.</em>
+          </h1>
+
+          <p class="hero__lede">
+            Ehgz is the curated venue discovery and booking app for Cairo, the North Coast,
+            and beyond. Instantly reserve restaurants, rooftops, lounges and cafes —
+            zero fees, instant confirmation, every time.
+          </p>
+
+          <div class="hero__cta-row">
+            <a class="app-badge" href="#download" aria-label="Download on the App Store">
+              <svg class="app-badge__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M16.365 1.43c0 1.14-.42 2.27-1.18 3.07-.79.86-2.06 1.5-3.05 1.43-.13-1.06.43-2.18 1.16-2.97.82-.91 2.21-1.55 3.07-1.53zM20.5 17.39c-.59 1.31-.88 1.9-1.64 3.05-1.06 1.61-2.55 3.62-4.4 3.64-1.65.02-2.07-1.07-4.31-1.06-2.24.01-2.7 1.08-4.34 1.06-1.85-.02-3.27-1.83-4.33-3.45-2.95-4.49-3.26-9.76-1.44-12.56 1.3-1.99 3.34-3.16 5.26-3.16 1.96 0 3.19 1.07 4.81 1.07 1.57 0 2.53-1.07 4.79-1.07 1.71 0 3.52.93 4.81 2.54-4.23 2.32-3.55 8.36.79 9.94z"/>
+              </svg>
+              <span class="app-badge__text">
+                <span class="app-badge__small">Download on the</span>
+                <span class="app-badge__big">App Store</span>
+              </span>
+            </a>
+            <a class="btn btn--ghost btn--lg" href="#how">
+              See how it works
+              <span class="btn__arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+
+          <div class="hero__meta">
+            <span><span class="hero__meta-dot" aria-hidden="true"></span> Zero booking fees</span>
+            <span><span class="hero__meta-dot" aria-hidden="true"></span> Instant confirmation</span>
+            <span><span class="hero__meta-dot" aria-hidden="true"></span> Curated, never spammed</span>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-hidden="false">
+          <div class="hero__glow" aria-hidden="true"></div>
+          <div class="phone-stack">
+
+            <div class="phone-stack__item phone-stack__item--back">
+              <div class="phone phone--lg">
+                <div class="phone__notch" aria-hidden="true"></div>
+                <div class="phone__screen">
+                  <img src="assets/images/screen-map.png"
+                       alt="Ehgz map view showing curated restaurants, cafes and bars across Cairo and the Nile delta"
+                       loading="lazy" decoding="async" width="280" height="608" />
+                </div>
+              </div>
+            </div>
+
+            <div class="phone-stack__item phone-stack__item--side">
+              <div class="phone phone--lg">
+                <div class="phone__notch" aria-hidden="true"></div>
+                <div class="phone__screen">
+                  <img src="assets/images/screen-search.png"
+                       alt="Ehgz search results showing trending restaurants in Cairo with star ratings and price ranges"
+                       loading="lazy" decoding="async" width="280" height="608" />
+                </div>
+              </div>
+            </div>
+
+            <div class="phone-stack__item phone-stack__item--front">
+              <div class="phone phone--lg">
+                <div class="phone__notch" aria-hidden="true"></div>
+                <div class="phone__screen">
+                  <img src="assets/images/screen-discover.png"
+                       alt="Ehgz discover home with the headline Where to tonight, atmosphere filters and trending venues like Khufu's Restaurant in Giza"
+                       fetchpriority="high" decoding="async" width="280" height="608" />
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <span class="scroll-indicator" aria-hidden="true">
+        Scroll
+        <span class="scroll-indicator__line"></span>
+      </span>
+    </section>
+
+    <!-- =========================================
+         STATS
+         ========================================= -->
+    <section class="stats" aria-label="Ehgz at a glance">
+      <div class="container">
+        <ul class="stats__grid" data-stagger>
+          <li class="stat">
+            <span class="stat__value"><span class="counter" data-counter="180" data-counter-suffix="+">0+</span></span>
+            <span class="stat__label">Curated venues</span>
+          </li>
+          <li class="stat">
+            <span class="stat__value"><span class="counter" data-counter="0">0</span><sup>%</sup></span>
+            <span class="stat__label">Booking fees</span>
+          </li>
+          <li class="stat">
+            <span class="stat__value"><span class="counter" data-counter="42000" data-counter-suffix="+">0+</span></span>
+            <span class="stat__label">Reservations made</span>
+          </li>
+          <li class="stat">
+            <span class="stat__value"><span class="counter" data-counter="4" data-counter-suffix=".9">0</span></span>
+            <span class="stat__label">App Store rating</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- =========================================
+         CITIES MARQUEE
+         ========================================= -->
+    <div class="marquee" role="presentation" aria-hidden="true">
+      <div class="marquee__track">
+        <span class="marquee__item">Cairo</span>
+        <span class="marquee__item">New Cairo</span>
+        <span class="marquee__item">Zamalek</span>
+        <span class="marquee__item">Giza</span>
+        <span class="marquee__item">Sahel</span>
+        <span class="marquee__item">El Gouna</span>
+        <span class="marquee__item">Alexandria</span>
+        <span class="marquee__item">Sheikh Zayed</span>
+        <!-- duplicate for seamless loop -->
+        <span class="marquee__item">Cairo</span>
+        <span class="marquee__item">New Cairo</span>
+        <span class="marquee__item">Zamalek</span>
+        <span class="marquee__item">Giza</span>
+        <span class="marquee__item">Sahel</span>
+        <span class="marquee__item">El Gouna</span>
+        <span class="marquee__item">Alexandria</span>
+        <span class="marquee__item">Sheikh Zayed</span>
+      </div>
+    </div>
+
+    <!-- =========================================
+         FEATURES
+         ========================================= -->
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <span class="section__eyebrow">What sets Ehgz apart</span>
+          <h2 class="section__title" id="features-title">
+            A premium booking experience, <span class="text-gradient">designed for Egypt.</span>
+          </h2>
+          <p class="section__lede">
+            Every venue is hand-picked. Every reservation is fee-free. Every detail —
+            from atmosphere filters to interactive maps — is built to make your night out effortless.
+          </p>
+        </header>
+
+        <div class="features__grid">
+
+          <article class="feature feature--xl" data-reveal>
+            <div>
+              <div class="feature__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 21s-7-6.16-7-11a7 7 0 0 1 14 0c0 4.84-7 11-7 11Z"/>
+                  <circle cx="12" cy="10" r="2.5"/>
+                </svg>
+              </div>
+              <h3>Discover venues by mood &amp; map</h3>
+              <p>
+                Filter by atmosphere — romantic, rooftop, live entertainment — or zoom into Cairo,
+                Sahel and El Gouna on a hand-curated map of the country's best places.
+              </p>
+            </div>
+
+            <div class="feature__mock" aria-hidden="true">
+              <span class="feature__pill feature__pill--active">All Egypt</span>
+              <span class="feature__pill">Cairo</span>
+              <span class="feature__pill">Sahel</span>
+              <span class="feature__pill">Zamalek</span>
+              <span class="feature__pill">Romantic</span>
+              <span class="feature__pill">Rooftop &amp; Views</span>
+              <span class="feature__pill">Live Entertainment</span>
+            </div>
+          </article>
+
+          <article class="feature feature--md" data-reveal data-reveal-delay="1">
+            <div>
+              <div class="feature__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                </svg>
+              </div>
+              <h3>Instant confirmation</h3>
+              <p>Tables held the moment you tap "book". No wait, no callback.</p>
+            </div>
+          </article>
+
+          <article class="feature feature--md" data-reveal data-reveal-delay="2">
+            <div>
+              <div class="feature__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                  <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+              </div>
+              <h3>Zero fees, ever</h3>
+              <p>You pay the venue. Nothing extra. The price you see is the price you pay.</p>
+            </div>
+          </article>
+
+          <article class="feature feature--lg" data-reveal data-reveal-delay="1">
+            <div>
+              <div class="feature__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="7"/>
+                  <path d="m20 20-3.5-3.5"/>
+                </svg>
+              </div>
+              <h3>Smart search &amp; filters</h3>
+              <p>
+                Sort by rating, price tier (£ to ££££), or "most reviewed". Save the venues you
+                love to your profile for one-tap access next time.
+              </p>
+            </div>
+            <div class="feature__mock" aria-hidden="true">
+              <span class="feature__pill feature__pill--active">A – Z</span>
+              <span class="feature__pill">Top Rated</span>
+              <span class="feature__pill">Most Reviewed</span>
+              <span class="feature__pill">Price: Low</span>
+            </div>
+          </article>
+
+          <article class="feature feature--sm" data-reveal data-reveal-delay="2">
+            <div>
+              <div class="feature__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </div>
+              <h3>Personal saved list</h3>
+              <p>Build a private library of go-tos and dream venues. Sync across devices.</p>
+            </div>
+          </article>
+
+          <article class="feature feature--full" data-reveal>
+            <div>
+              <div class="feature__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 11l8-8 8 8M5 9v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9"/>
+                </svg>
+              </div>
+              <h3>Built natively for iOS, with the polish you expect</h3>
+              <p>
+                Haptics, dynamic type, dark mode by default and a tab bar that actually feels good
+                under your thumb. Every screen is tuned for one-hand use.
+              </p>
+            </div>
+            <div class="feature__mock" aria-hidden="true">
+              <span class="feature__pill">Discover</span>
+              <span class="feature__pill">Search</span>
+              <span class="feature__pill">Map</span>
+              <span class="feature__pill feature__pill--active">Profile</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         HOW IT WORKS
+         ========================================= -->
+    <section class="section" id="how" aria-labelledby="how-title">
+      <div class="container">
+        <header class="section__head section__head--center" data-reveal>
+          <span class="section__eyebrow">How it works</span>
+          <h2 class="section__title section__title--center" id="how-title">
+            Three taps from <span class="text-gradient">"where to?"</span> to your table.
+          </h2>
+          <p class="section__lede">
+            We obsess over the details so you don't have to. Open Ehgz, browse, book — done.
+          </p>
+        </header>
+
+        <div class="steps">
+
+          <article class="step" data-reveal="left">
+            <div class="step__copy">
+              <span class="step__index" aria-hidden="true">01</span>
+              <h3 class="step__title">Discover what fits the night.</h3>
+              <p class="step__body">
+                Tell Ehgz the mood. We'll surface venues that match — from romantic rooftops in
+                Zamalek to live-music lounges in New Cairo.
+              </p>
+              <ul class="step__list">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Atmosphere &amp; cuisine filters</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> "Trending tonight" curation</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Editor-picked first impressions</li>
+              </ul>
+            </div>
+            <div class="step__visual" data-parallax="0.05">
+              <div class="phone phone--lg">
+                <div class="phone__notch" aria-hidden="true"></div>
+                <div class="phone__screen">
+                  <img src="assets/images/screen-discover.png"
+                       alt="Ehgz discover screen with mood-based filters and trending venues"
+                       loading="lazy" decoding="async" width="280" height="608" />
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="step" data-reveal="right">
+            <div class="step__copy">
+              <span class="step__index" aria-hidden="true">02</span>
+              <h3 class="step__title">Filter, compare, decide.</h3>
+              <p class="step__body">
+                Sort by price tier, rating, or popularity. Open a venue to see photos,
+                neighborhood, average price, and the next available slot.
+              </p>
+              <ul class="step__list">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Price tiers in Egyptian Pounds (£ to ££££)</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Verified ratings, no fakes</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Save to a private favourites list</li>
+              </ul>
+            </div>
+            <div class="step__visual" data-parallax="0.05">
+              <div class="phone phone--lg">
+                <div class="phone__notch" aria-hidden="true"></div>
+                <div class="phone__screen">
+                  <img src="assets/images/screen-search.png"
+                       alt="Ehgz search and filter screen showing 18 venues found across Cairo"
+                       loading="lazy" decoding="async" width="280" height="608" />
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="step" data-reveal="left">
+            <div class="step__copy">
+              <span class="step__index" aria-hidden="true">03</span>
+              <h3 class="step__title">Book instantly. Show up.</h3>
+              <p class="step__body">
+                Confirm in two taps. Get reminders the day before. Track every reservation —
+                upcoming, completed, saved — from your profile.
+              </p>
+              <ul class="step__list">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> No callbacks. No deposits. No fees.</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Reminder notifications, opt-in</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Full booking history in your profile</li>
+              </ul>
+            </div>
+            <div class="step__visual" data-parallax="0.05">
+              <div class="phone phone--lg">
+                <div class="phone__notch" aria-hidden="true"></div>
+                <div class="phone__screen">
+                  <img src="assets/images/screen-profile.png"
+                       alt="Ehgz user profile showing upcoming, completed, saved and total reservation counts"
+                       loading="lazy" decoding="async" width="280" height="608" />
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         CITIES / CATEGORIES
+         ========================================= -->
+    <section class="section" id="cities" aria-labelledby="cities-title">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <span class="section__eyebrow">Across Egypt</span>
+          <h2 class="section__title" id="cities-title">
+            From rooftops in <span class="text-gradient">Cairo</span> to beach clubs on the <span class="text-gradient">North Coast.</span>
+          </h2>
+          <p class="section__lede">
+            Whatever the night calls for, Ehgz has it covered.
+          </p>
+        </header>
+
+        <div class="cats__grid" data-stagger>
+          <a href="#download" class="cat cat--restaurants cat--lg" aria-label="Browse restaurants on Ehgz">
+            <div class="cat__bg" aria-hidden="true"></div>
+            <div class="cat__label">
+              <div>
+                <span class="cat__count">82 venues</span>
+                <h3 class="cat__name">Restaurants</h3>
+              </div>
+              <span class="cat__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+          <a href="#download" class="cat cat--rooftops" aria-label="Browse rooftops on Ehgz">
+            <div class="cat__bg" aria-hidden="true"></div>
+            <div class="cat__label">
+              <div>
+                <span class="cat__count">24 venues</span>
+                <h3 class="cat__name">Rooftops</h3>
+              </div>
+              <span class="cat__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+          <a href="#download" class="cat cat--lounges" aria-label="Browse lounges on Ehgz">
+            <div class="cat__bg" aria-hidden="true"></div>
+            <div class="cat__label">
+              <div>
+                <span class="cat__count">31 venues</span>
+                <h3 class="cat__name">Lounges</h3>
+              </div>
+              <span class="cat__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+          <a href="#download" class="cat cat--bars" aria-label="Browse bars on Ehgz">
+            <div class="cat__bg" aria-hidden="true"></div>
+            <div class="cat__label">
+              <div>
+                <span class="cat__count">19 venues</span>
+                <h3 class="cat__name">Bars</h3>
+              </div>
+              <span class="cat__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+          <a href="#download" class="cat cat--cafes" aria-label="Browse cafes on Ehgz">
+            <div class="cat__bg" aria-hidden="true"></div>
+            <div class="cat__label">
+              <div>
+                <span class="cat__count">28 venues</span>
+                <h3 class="cat__name">Cafés</h3>
+              </div>
+              <span class="cat__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+          <a href="#download" class="cat cat--beach" aria-label="Browse beach clubs on Ehgz">
+            <div class="cat__bg" aria-hidden="true"></div>
+            <div class="cat__label">
+              <div>
+                <span class="cat__count">14 venues</span>
+                <h3 class="cat__name">Beach clubs</h3>
+              </div>
+              <span class="cat__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         TESTIMONIALS
+         ========================================= -->
+    <section class="section" id="testimonials" aria-labelledby="testi-title">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <span class="section__eyebrow">Loved by locals &amp; travellers</span>
+          <h2 class="section__title" id="testi-title">
+            "Where to tonight?" — <span class="text-gradient">solved.</span>
+          </h2>
+        </header>
+
+        <div class="testimonials__rail" data-stagger>
+
+          <figure class="quote">
+            <span class="quote__stars" aria-label="5 out of 5 stars">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+            </span>
+            <blockquote class="quote__text">
+              "Booked a rooftop in Zamalek in 30 seconds. The whole experience felt like
+              the kind of app I wish we'd had ten years ago."
+            </blockquote>
+            <figcaption class="quote__author">
+              <span class="quote__avatar" aria-hidden="true">N</span>
+              <span>
+                <span class="quote__name">Nour A.</span>
+                <span class="quote__role">Cairo · Frequent diner</span>
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure class="quote">
+            <span class="quote__stars" aria-label="5 out of 5 stars">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+            </span>
+            <blockquote class="quote__text">
+              "I'm visiting from London and Ehgz instantly told me where the city actually
+              eats — not what's first on Google. Genuinely curated."
+            </blockquote>
+            <figcaption class="quote__author">
+              <span class="quote__avatar" aria-hidden="true">J</span>
+              <span>
+                <span class="quote__name">James M.</span>
+                <span class="quote__role">Visitor · 2 weeks in Egypt</span>
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure class="quote">
+            <span class="quote__stars" aria-label="5 out of 5 stars">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+            </span>
+            <blockquote class="quote__text">
+              "Zero booking fees, instant confirmation, and the design is gorgeous.
+              I haven't called a restaurant in months."
+            </blockquote>
+            <figcaption class="quote__author">
+              <span class="quote__avatar" aria-hidden="true">Y</span>
+              <span>
+                <span class="quote__name">Yasmin K.</span>
+                <span class="quote__role">Sahel · Power user</span>
+              </span>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         FAQ
+         ========================================= -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <header class="section__head section__head--center" data-reveal>
+          <span class="section__eyebrow">FAQ</span>
+          <h2 class="section__title section__title--center" id="faq-title">
+            Everything you might ask, <span class="text-gradient">answered.</span>
+          </h2>
+        </header>
+
+        <div class="faq__list" data-stagger>
+          <details class="faq__item" name="faq">
+            <summary>Is Ehgz really free? What's the catch?</summary>
+            <p>There is no catch. Ehgz is free to download and we charge zero booking fees. You only pay the venue, exactly what you'd pay walking in. We work directly with our partner venues to keep it that way.</p>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary>Which cities does Ehgz cover?</summary>
+            <p>We're live across Cairo (including Zamalek, New Cairo, Sheikh Zayed and Maadi), Giza, Alexandria, the North Coast (Sahel) and El Gouna, with more cities being added every month.</p>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary>How are venues curated?</summary>
+            <p>Every venue on Ehgz is reviewed by our local team. We visit, vet and only list places we'd genuinely send our friends to. No paid placements, no algorithmic clutter.</p>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary>Can I cancel a reservation?</summary>
+            <p>Yes — most reservations can be cancelled or rescheduled directly from the app, free of charge. A few high-demand venues require advance notice; that's always shown upfront before you confirm.</p>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary>Is there an Android app?</summary>
+            <p>Ehgz is iOS-first today. An Android version is on the roadmap — sign up for our newsletter to be the first to know when it ships.</p>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary>I own a venue. Can I get listed?</summary>
+            <p>We'd love to hear from you. Head to our <a href="support.html">support page</a> and submit a partnership request — our team usually replies within two business days.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         DOWNLOAD CTA
+         ========================================= -->
+    <section class="section cta" id="download" aria-labelledby="download-title">
+      <div class="container">
+        <div class="cta__inner" data-reveal="zoom">
+          <div>
+            <span class="section__eyebrow">Available on iOS</span>
+            <h2 class="cta__title" id="download-title">
+              Your next great night out, <span class="text-gradient">already booked.</span>
+            </h2>
+            <p class="cta__lede">
+              Download Ehgz free on the App Store and unlock instant booking across
+              Egypt's most-loved restaurants, rooftops and bars — zero fees, every time.
+            </p>
+            <div class="cta__badges">
+              <a class="app-badge" href="#" aria-label="Download on the App Store">
+                <svg class="app-badge__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M16.365 1.43c0 1.14-.42 2.27-1.18 3.07-.79.86-2.06 1.5-3.05 1.43-.13-1.06.43-2.18 1.16-2.97.82-.91 2.21-1.55 3.07-1.53zM20.5 17.39c-.59 1.31-.88 1.9-1.64 3.05-1.06 1.61-2.55 3.62-4.4 3.64-1.65.02-2.07-1.07-4.31-1.06-2.24.01-2.7 1.08-4.34 1.06-1.85-.02-3.27-1.83-4.33-3.45-2.95-4.49-3.26-9.76-1.44-12.56 1.3-1.99 3.34-3.16 5.26-3.16 1.96 0 3.19 1.07 4.81 1.07 1.57 0 2.53-1.07 4.79-1.07 1.71 0 3.52.93 4.81 2.54-4.23 2.32-3.55 8.36.79 9.94z"/>
+                </svg>
+                <span class="app-badge__text">
+                  <span class="app-badge__small">Download on the</span>
+                  <span class="app-badge__big">App Store</span>
+                </span>
+              </a>
+              <span class="muted">Free · Requires iOS 16+</span>
+            </div>
+          </div>
+
+          <div class="cta__visual" data-parallax="0.06">
+            <div class="phone phone--lg">
+              <div class="phone__notch" aria-hidden="true"></div>
+              <div class="phone__screen">
+                <img src="assets/images/screen-discover.png"
+                     alt="Ehgz home screen ready to book a venue tonight"
+                     loading="lazy" decoding="async" width="280" height="608" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="site-footer__grid">
+
+        <div class="site-footer__about">
+          <a class="brand" href="/" aria-label="Ehgz home">
+            <span class="brand__mark" aria-hidden="true">E</span>
+            <span>Ehgz</span>
+          </a>
+          <p>The curated venue discovery and booking app for Egypt. Made with love in Cairo.</p>
+        </div>
+
+        <div>
+          <h4>Product</h4>
+          <ul class="site-footer__links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how">How it works</a></li>
+            <li><a href="#cities">Cities</a></li>
+            <li><a href="#download">Download</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <ul class="site-footer__links">
+            <li><a href="features.html">Why Ehgz</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="support.html#partners">Venue partners</a></li>
+            <li><a href="support.html#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Legal</h4>
+          <ul class="site-footer__links">
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="privacy.html#cookies">Cookies</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="site-footer__bottom">
+        <span>© <span data-current-year>2026</span> Ehgz. All rights reserved.</span>
+        <span class="site-footer__social" aria-label="Ehgz on social media">
+          <a href="#" aria-label="Ehgz on Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
+          </a>
+          <a href="#" aria-label="Ehgz on X / Twitter">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2H21l-6.52 7.45L22 22h-6.78l-4.74-6.2L4.96 22H2.2l6.97-7.96L2 2h6.92l4.27 5.66L18.24 2zm-2.38 18h1.83L7.27 4h-1.9l10.5 16z"/></svg>
+          </a>
+          <a href="#" aria-label="Ehgz on TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 8.5a6.5 6.5 0 0 1-3.8-1.2v7.5a5.8 5.8 0 1 1-5.8-5.8v3a2.8 2.8 0 1 0 2.8 2.8V2h3a3.5 3.5 0 0 0 3.5 3.5h.3v3z"/></svg>
+          </a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
